@@ -10,17 +10,6 @@ This repository is the PyTorch implementation for the network presented in:
   <img src="teaser.png" width="350"/>
 </p>
 
-**<span style="color:red">Note: </span>** This repository has been updated and is different from the method discribed in the paper. To fully reproduce the results in the paper, please checkout the original [torch implementation](https://github.com/xingyizhou/pose-hg-3d) or our [pytorch re-implementation branch](https://github.com/xingyizhou/pytorch-pose-hg-3d/tree/hg3d) (slightly worse than torch). 
-We also provide a clean [2D hourglass network branch](https://github.com/xingyizhou/pytorch-pose-hg-3d/tree/2D).
-
-The updates include:
-- Change network backbone to ResNet50 with deconvolution layers ([Xiao et al. ECCV2018](https://github.com/Microsoft/human-pose-estimation.pytorch)). Training is now about 3x faster than the original hourglass net backbone (but no significant performance improvement). 
-- Change the depth regression sub-network to a one-layer depth map (described in our [StarMap project](https://github.com/xingyizhou/StarMap)).
-- Change the Human3.6M dataset to official release in [ECCV18 challenge](http://vision.imar.ro/human3.6m/challenge_open.php). 
-- Update from python 2.7 and pytorch 0.1.12 to python 3.6 and pytorch 0.4.1.
-
-Contact: [zhouxy2017@gmail.com](mailto:zhouxy2017@gmail.com)
-
 ## Installation
 The code was tested with [Anaconda](https://www.anaconda.com/download) Python 3.6 and [PyTorch]((http://pytorch.org/)) v0.4.1. After install Anaconda and Pytorch:
 
@@ -114,13 +103,3 @@ python main.py --exp_id fusion_3d --task human3d --dataset fusion_3d --ratio_3d 
 ```
 python main.py --exp_id fusion_3d_var --task human3d --dataset fusion_3d --ratio_3d 1 --weight_3d 0.1 --weight_var 0.01 --load_model ../models/fusion_3d.pth  --num_epoch 10 --lr 1e-4
 ```
-
-## Citation
-
-    @InProceedings{Zhou_2017_ICCV,
-    author = {Zhou, Xingyi and Huang, Qixing and Sun, Xiao and Xue, Xiangyang and Wei, Yichen},
-    title = {Towards 3D Human Pose Estimation in the Wild: A Weakly-Supervised Approach},
-    booktitle = {The IEEE International Conference on Computer Vision (ICCV)},
-    month = {Oct},
-    year = {2017}
-    }
